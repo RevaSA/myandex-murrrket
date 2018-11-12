@@ -11,14 +11,10 @@
         transition: fill .15s;
         fill: #fff;
         overflow: hidden;
+        cursor: pointer;
 
         &:nth-of-type(odd) {
             transform: scale(-1, 1);
-        }
-
-        &:hover,
-        &:hover ~ & {
-            fill: @color-red-berry;
         }
 
         &::before {
@@ -37,5 +33,15 @@
             max-width: 80%;
             max-height: 80%;
         }
+    }
+
+    &__radio {
+        display: none;
+    }
+
+    &__label:hover svg,
+    &__label:hover ~ &__label svg,
+    &__radio:checked ~ &__label {
+        fill: @color-red-berry;
     }
 }

@@ -28,6 +28,8 @@
 
         <div class="cats">
             <% cats.forEach(cat => { %>
+                <% kindId = 'kind-' + cat.id + '-' %>
+
                 <div class="cat">
                     <div class="cat__img-w">
                         <img class="cat__img" src="<%= cat.imgUrl %>" alt="<%= cat.name %>">
@@ -38,7 +40,7 @@
                     <div class="cat__name-w" data-cat-name="<%= cat.name %>">
                         <span class="cat__name">
                             <a href="#" class="cat__name-link">
-                                                        <%= cat.kind %><%= cat.name %>
+                                <%= cat.name %>
                             </a>
                         </span>
                     </div>
@@ -49,8 +51,16 @@
                     </div>
 
                     <form class="rating">
-                        <% for(let i = 0.5; i <= 5; i += 0.5) { %>
-                            <label class="rating__label">
+                        <% for(let i = 5; i >= 0.5; i -= 0.5) { %>
+                            <input
+                                id="<%= kindId + i %>"
+                                type="radio"
+                                name="kind"
+                                class="rating__radio"
+                                <%= (i === cat.kind) ? 'checked' : '' %>
+                            >
+
+                            <label for="<%= kindId + i %>" class="rating__label">
                                 <%- include('img/half-cat.svg'); %>
                             </label>
                         <% } %>
