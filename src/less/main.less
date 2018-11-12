@@ -40,31 +40,36 @@ body {
     margin: 0 auto;
     font-size: 0;
 
-    &__hr {
-        margin-bottom: 2rem;
-        border: .1rem solid @color-red-berry;
+    &__switch-radio {
+        display: none;
     }
 
-    &__switch-radio {
-
+    &__switch-radio:checked ~ &__switch-label {
+        //fill: yellow;
     }
 
     &__switch-label {
+        float: right;
         display: block;
-        width: 3rem;
-        height: 3rem;
+        .square(2.5rem);
+        margin-left: 1rem;
+        fill: @color-red-berry;
+        cursor: pointer;
 
         svg {
             width: 100%;
             height: 100%;
-            fill: @color-red-berry;
+        }
+
+        &:hover {
+            fill: @color-red;
         }
     }
-}
 
-.switch {
-    //float: right;
-    margin-bottom: 1rem;
+    &__hr {
+        margin-bottom: 2rem;
+        border: .1rem solid @color-red-berry;
+    }
 }
 
 .price {

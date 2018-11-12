@@ -1,2 +1,30 @@
 @color-red: #F00;
 @color-red-berry: #800;
+
+.size(@width, @height) {
+    width: @width;
+    height: @height;
+}
+
+.square(@size) {
+    .size(@size, @size);
+}
+
+.align-v(@position: absolute) {
+    position: @position;
+    top: 50%;
+    transform+_: translateY(-50%);
+}
+
+.align-g(@position: absolute) {
+    position: @position;
+    left: 50%;
+    transform+_: translateX(-50%);
+}
+
+.align(@position: absolute) {
+    position: @position;
+    top: 50%;
+    left: 50%;
+    transform+_: translateX(-50%) translateY(-50%);
+}
