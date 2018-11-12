@@ -1,9 +1,8 @@
 @import (less) 'node_modules/normalize.css/normalize.css';
 @import (less) './_media';
-@import (less) "./_rating";
-
-@color-red: #F00;
-@color-red-berry: #800;
+@import (less) './_vars';
+@import (less) './_cat';
+@import (less) './_rating';
 
 *,
 h1 {
@@ -66,114 +65,6 @@ body {
 .switch {
     //float: right;
     margin-bottom: 1rem;
-}
-
-.cat {
-    display: inline-block;
-    width: 30rem;
-    box-sizing: border-box;
-    padding: 1.5rem;
-    font-size: 1.5rem;
-    text-align: left;
-    vertical-align: top;
-    border-radius: 1rem;
-
-    &:hover {
-        box-shadow: 0 0 10px @color-red-berry;
-    }
-
-    &__img-w {
-        position: relative;
-        margin-bottom: 1rem;
-        height: 300px;
-    }
-
-    &__img {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    &__name {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        overflow: hidden;
-        font-size: 2rem;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    &__name-link {
-        text-decoration: none;
-        color: #000;
-        font-weight: 500;
-    }
-
-    &__category {
-        margin-bottom: .75rem;
-        font-size: 1rem;
-    }
-
-    &__desc {
-        text-align: justify;
-    }
-}
-
-.rating {
-    margin-bottom: .75rem;
-    font-size: 0;
-    direction: rtl;
-
-    &__item {
-        display: inline-block;
-        width: 3rem;
-        height: 3rem;
-        overflow: hidden;
-    }
-
-    &__label {
-        position: relative;
-        display: inline-block;
-        width: 2rem;
-        height: 4rem;
-        padding-left: .25rem;
-        transition: fill .15s;
-        fill: #fff;
-        overflow: hidden;
-
-        &:nth-of-type(odd) {
-            transform: scale(-1, 1);
-        }
-
-        &:hover,
-        &:hover ~ & {
-            fill: @color-red-berry;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: 5%;
-            display: block;
-            width: 200%;
-            height: 100%;
-            background: @color-red;
-            border-radius: 50%;
-        }
-
-        & > svg {
-            position: absolute;
-            top: 50%;
-            right: -.1rem;
-            transform: translateY(-50%);
-            max-width: 80%;
-            max-height: 80%;
-        }
-    }
 }
 
 .price {

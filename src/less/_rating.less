@@ -1,0 +1,52 @@
+.rating {
+    margin-bottom: .75rem;
+    font-size: 0;
+    direction: rtl;
+
+    &__item {
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        overflow: hidden;
+    }
+
+    &__label {
+        position: relative;
+        display: inline-block;
+        width: 2rem;
+        height: 4rem;
+        padding-left: .25rem;
+        transition: fill .15s;
+        fill: #fff;
+        overflow: hidden;
+
+        &:nth-of-type(odd) {
+            transform: scale(-1, 1);
+        }
+
+        &:hover,
+        &:hover ~ & {
+            fill: @color-red-berry;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 5%;
+            display: block;
+            width: 200%;
+            height: 100%;
+            background: @color-red;
+            border-radius: 50%;
+        }
+
+        & > svg {
+            position: absolute;
+            top: 50%;
+            right: -.1rem;
+            transform: translateY(-50%);
+            max-width: 80%;
+            max-height: 80%;
+        }
+    }
+}
