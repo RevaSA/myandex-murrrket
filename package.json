@@ -1,0 +1,32 @@
+{
+  "name": "myandex-murrrket",
+  "version": "0.0.1",
+  "description": "Catalog of cats",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "NODE_ENV=development gulp",
+    "prod": "gulp prod",
+    "lint": "stylelint src/less/*.less",
+    "precommit": "npm run lint"
+  },
+  "author": "Stanislav Reva",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-ejs": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-include": "^2.3.1",
+    "gulp-less": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-util": "^3.0.8",
+    "husky": "^0.14.3",
+    "stylelint": "^7.13.0"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}

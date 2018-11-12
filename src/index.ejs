@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Мяндекс.Муррркет</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Мяндекс.<span class="header__mrrr">Муррр</span>кет</h1>
+    </header>
+
+    <main class="main">
+        <input id="switchList" type="radio" name="switch" class="main__switch-radio">
+        <label for="switchList" class="main__switch-label">
+            <%- include('img/list.svg'); %>
+        </label>
+
+        <input id="switchTile" type="radio" name="switch" class="main__switch-radio">
+        <label for="switchTile" class="main__switch-label">
+            <%- include('img/list.svg'); %>
+        </label>
+
+        <hr class="main__hr clear">
+
+        <div class="cats">
+            <% cats.forEach(cat => { %>
+                <div class="cat">
+                    <div class="cat__img-w">
+                        <img class="cat__img" src="<%= cat.imgUrl %>" alt="<%= cat.name %>">
+                    </div>
+
+                    <!--TODO: доделать отображение имени при наведении-->
+
+                    <div class="cat__name-w" data-cat-name="<%= cat.name %>">
+                        <span class="cat__name">
+                            <a href="#" class="cat__name-link">
+                                                        <%= cat.kind %><%= cat.name %>
+                            </a>
+                        </span>
+                    </div>
+
+                    <div class="cat__category">
+                        <a href="/">Мяндекс.Муррркет</a> –
+                        <a href="#"><%= cat.category %></a>
+                    </div>
+
+                    <form class="rating">
+                        <% for(let i = 0.5; i <= 5; i += 0.5) { %>
+                            <label class="rating__label">
+                                <%- include('img/half-cat.svg'); %>
+                            </label>
+                        <% } %>
+                    </form>
+
+                    <div class="price">
+                        <span class="price__curr">
+                            <%= cat.price %> руб.
+                        </span>
+
+                        <% if (cat.oldPrice) { %>
+                            <span class="price__old">
+                                <%= cat.oldPrice %> руб.
+                            </span>
+                        <% } %>
+                    </div>
+                    <div class="cat__desc">
+                        <%= cat.desc %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+
+    <footer class="footer">
+        Кто-то что-то.
+    </footer>
+
+</body>
+</html>
