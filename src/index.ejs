@@ -47,14 +47,10 @@
                     </div>
 
                     <div class="cat__info">
-                        <!--TODO: доделать отображение имени при наведении-->
-
-                        <div class="cat__name-w" data-cat-name="<%= cat.name %>">
-                            <span class="cat__name">
-                                <a href="#" class="cat__name-link">
-                                    <%= cat.name %>
-                                </a>
-                            </span>
+                        <div class="cat__name">
+                            <a href="#" class="cat__name-link">
+                                <%= cat.name %>
+                            </a>
                         </div>
 
                         <div class="cat__category">
@@ -98,9 +94,5 @@
             <% }); %>
         </div>
     </main>
-
-    <footer class="footer">
-        Кто-то что-то.
-    </footer>
 </body>
 </html>
