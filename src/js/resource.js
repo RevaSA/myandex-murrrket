@@ -1,6 +1,6 @@
 // Файл с ресурсами для передачи их в ejs
 
-const pathToImgCats = '/img/cats/';
+const pathToImgCats = 'img/cats/';
 
 module.exports = {
     cats: [
