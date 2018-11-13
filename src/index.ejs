@@ -14,12 +14,23 @@
     </header>
 
     <main class="main">
-        <input id="switchList" type="radio" name="switch" class="main__switch-radio" checked>
+        <input
+            id="switchList"
+            type="radio"
+            name="switch"
+            class="main__switch-radio main__switch-radio_list"
+        >
         <label for="switchList" class="main__switch-label">
             <%- include('img/list.svg'); %>
         </label>
 
-        <input id="switchTile" type="radio" name="switch" class="main__switch-radio">
+        <input
+            id="switchTile"
+            type="radio"
+            name="switch"
+            class="main__switch-radio main__switch-radio_tile"
+            checked
+        >
         <label for="switchTile" class="main__switch-label">
             <%- include('img/tile.svg'); %>
         </label>
@@ -35,48 +46,51 @@
                         <img class="cat__img" src="<%= cat.imgUrl %>" alt="<%= cat.name %>">
                     </div>
 
-                    <!--TODO: доделать отображение имени при наведении-->
+                    <div class="cat__info">
+                        <!--TODO: доделать отображение имени при наведении-->
 
-                    <div class="cat__name-w" data-cat-name="<%= cat.name %>">
-                        <span class="cat__name">
-                            <a href="#" class="cat__name-link">
-                                <%= cat.name %>
-                            </a>
-                        </span>
-                    </div>
-
-                    <div class="cat__category">
-                        <a href="/">Мяндекс.Муррркет</a> –
-                        <a href="#"><%= cat.category %></a>
-                    </div>
-
-                    <form class="rating">
-                        <% for(let i = 5; i >= 0.5; i -= 0.5) { %>
-                            <input
-                                id="<%= kindId + i %>"
-                                type="radio"
-                                name="kind"
-                                class="rating__radio"
-                                <%= (i === cat.kind) ? 'checked' : '' %>
-                            >
-
-                            <label for="<%= kindId + i %>" class="rating__label">
-                                <%- include('img/half-cat.svg'); %>
-                            </label>
-                        <% } %>
-                    </form>
-
-                    <div class="price">
-                        <span class="price__curr">
-                            <%= cat.price %> руб.
-                        </span>
-
-                        <% if (cat.oldPrice) { %>
-                            <span class="price__old">
-                                <%= cat.oldPrice %> руб.
+                        <div class="cat__name-w" data-cat-name="<%= cat.name %>">
+                            <span class="cat__name">
+                                <a href="#" class="cat__name-link">
+                                    <%= cat.name %>
+                                </a>
                             </span>
-                        <% } %>
+                        </div>
+
+                        <div class="cat__category">
+                            <a href="/">Мяндекс.Муррркет</a> –
+                            <a href="#"><%= cat.category %></a>
+                        </div>
+
+                        <form class="rating">
+                            <% for(let i = 5; i >= 0.5; i -= 0.5) { %>
+                                <input
+                                    id="<%= kindId + i %>"
+                                    type="radio"
+                                    name="kind"
+                                    class="rating__radio"
+                                    <%= (i === cat.kind) ? 'checked' : '' %>
+                                >
+
+                                <label for="<%= kindId + i %>" class="rating__label">
+                                    <%- include('img/half-cat.svg'); %>
+                                </label>
+                            <% } %>
+                        </form>
+
+                        <div class="price">
+                            <span class="price__curr">
+                                <%= cat.price %> руб.
+                            </span>
+
+                            <% if (cat.oldPrice) { %>
+                                <span class="price__old">
+                                    <%= cat.oldPrice %> руб.
+                                </span>
+                            <% } %>
+                        </div>
                     </div>
+
                     <div class="cat__desc">
                         <%= cat.desc %>
                     </div>
@@ -88,6 +102,5 @@
     <footer class="footer">
         Кто-то что-то.
     </footer>
-
 </body>
 </html>

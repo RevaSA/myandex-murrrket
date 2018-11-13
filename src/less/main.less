@@ -44,8 +44,45 @@ body {
         display: none;
     }
 
-    &__switch-radio:checked ~ &__switch-label {
-        //fill: yellow;
+    &__switch-radio:checked + &__switch-label {
+        fill: @color-red-berry;
+    }
+
+    &__switch-radio_list:checked ~ .cats {
+        .cat {
+            display: block;
+            width: 100%;
+
+            &__img-w {
+                display: inline-block;
+                //.size(20%, auto);
+                width: 20%;
+                max-height: 30rem;
+                margin: 0 10% 0 0;
+            }
+
+            &__img {
+                transform: none;
+                position: static;
+                display: block;
+                width: auto;
+                //height: 100%;
+            }
+
+            &__info {
+                display: inline-block;
+                width: 35%;
+                margin: 1rem 5% 0 0;
+                vertical-align: top;
+            }
+
+            &__desc {
+                display: inline-block;
+                width: 28%;
+                margin: 1rem 1% 0 0;
+                vertical-align: top;
+            }
+        }
     }
 
     &__switch-label {
@@ -53,7 +90,7 @@ body {
         display: block;
         .square(2.5rem);
         margin-left: 1rem;
-        fill: @color-red-berry;
+        fill: @color-red;
         cursor: pointer;
 
         svg {
@@ -62,7 +99,7 @@ body {
         }
 
         &:hover {
-            fill: @color-red;
+            fill: @color-red-berry;
         }
     }
 
